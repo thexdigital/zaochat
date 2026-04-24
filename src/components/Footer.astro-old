@@ -1,0 +1,267 @@
+---
+const links = {
+  Product: ["Features", "Pricing", "Integrations", "Changelog", "Roadmap"],
+  Company: ["About", "Blog", "Careers", "Press"],
+  Resources: ["Docs", "API Reference", "Community", "Status"],
+  Legal: ["Privacy policy", "Terms of service", "Cookie policy"],
+};
+---
+
+<!-- CTA Banner -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="cta-content">
+        <h2 class="cta-title">
+          Ready for a 24/7 Digital Assistant?
+        </h2>
+        <p class="cta-sub">
+          Join 100+ local brands who let our team handle the heavy lifting. We’ll hop on a screenshare, build your bot, and provide unlimited updates so you never have to touch a line of code.
+        </p>
+        <div class="cta-actions">
+          <a target="_blank" href="https://buy.stripe.com/eVq8wP6f1dfY5KPc8HcZa1l" class="btn btn-primary btn-lg">Get Started for $199</a>
+          <a target="_blank" href="https://calendly.com/daveyduarte/20-minute-meeting" class="btn btn-outline btn-lg">Book a screenshare demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="8" fill="#6366f1"/>
+            <path d="M8 10C8 9.44772 8.44772 9 9 9H19C19.5523 9 20 9.44772 20 10V15C20 15.5523 19.5523 16 19 16H15L11 19V16H9C8.44772 16 8 15.5523 8 15V10Z" fill="white"/>
+            <circle cx="11" cy="12.5" r="1" fill="#6366f1"/>
+            <circle cx="14" cy="12.5" r="1" fill="#6366f1"/>
+            <circle cx="17" cy="12.5" r="1" fill="#6366f1"/>
+          </svg>
+          <span>Zao Chat</span>
+        </a>
+        <p class="brand-tagline">
+          The Smartest AI Chatbot For Small Businesses
+        </p>
+        <div class="social-links">
+          <!-- X / Twitter -->
+          <a href="#" aria-label="X (Twitter)" class="social-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M12.6 2H14.85L9.9 7.65L15.65 14H11.1L7.5 9.65L3.4 14H1.15L6.45 7.95L0.95 2H5.6L8.85 5.95L12.6 2ZM11.85 12.65H13.1L4.8 3.3H3.45L11.85 12.65Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.5 5H1.5V14H3.5V5ZM2.5 4C3.05228 4 3.5 3.55228 3.5 3C3.5 2.44772 3.05228 2 2.5 2C1.94772 2 1.5 2.44772 1.5 3C1.5 3.55228 1.94772 4 2.5 4ZM14.5 14H12.5V9.5C12.5 8.11929 11.3807 7 10 7C8.61929 7 7.5 8.11929 7.5 9.5V14H5.5V5H7.5V6.20711C8.14929 5.45946 9.07456 5 10.1716 5C12.5431 5 14.5 6.95695 14.5 9.32843V14Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="#" aria-label="GitHub" class="social-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        {Object.entries(links).map(([group, items]) => (
+          <div class="link-group">
+            <h4>{group}</h4>
+            <ul>
+              {items.map((item) => (
+                <li><a href="#">{item}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Zao Adonai El. All rights reserved.</p>
+      <p class="footer-tagline">Built by TheXDigital.com, an agency of professional digital marketers.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* ── CTA ─────────────────────────────────────────── */
+  .cta-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-lg);
+    padding: 72px 48px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px var(--primary-glow), 0 32px 80px rgba(99, 102, 241, 0.12);
+  }
+
+  .cta-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+  }
+
+  .cta-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .cta-sub {
+    font-size: 17px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  /* ── Footer ────────────────────────────────────────── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 64px 0 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    margin-bottom: 56px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-tagline {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 8px;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .social-link:hover {
+    color: var(--text);
+    border-color: var(--subtle);
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .link-group h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  .link-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-group a {
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .link-group a:hover {
+    color: var(--text);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    font-size: 13px;
+    color: var(--subtle);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .footer-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-card {
+      padding: 48px 24px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

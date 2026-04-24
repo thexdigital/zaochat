@@ -1,0 +1,241 @@
+---
+const testimonials = [
+  {
+    quote:
+      "Zao Chat cut our first-response time from hours hours to under 2 minutes. Support tickets dropped by 60% in the first month. It genuinely feels like having a tireless team member.",
+    name: "O. Archibong",
+    role: "Trustee",
+    company: "Copyright Records",
+    initials: "OA",
+    color: "#6366f1",
+  },
+  {
+    quote:
+      "We were skeptical about AI chatbots, but this bots answers are shockingly accurate. It trained on our docs in minutes and now handles 80% of our support volume without any human input.",
+    name: "J. Dos Santos",
+    role: "Owner",
+    company: "Hawaii.Gallery",
+    initials: "JD",
+    color: "#a78bfa",
+  },
+  {
+    quote:
+      "The lead qualification feature alone paid for itself in the first week. Our sales team now gets warm, context-rich handoffs instead of cold form submissions. Night and day difference.",
+    name: "J. Mendoza",
+    role: "Owner",
+    company: "Olas Aguas",
+    initials: "JM",
+    color: "#60a5fa",
+  },
+  {
+    quote:
+      "Setup literally took 8 minutes. I uploaded our help docs, customized the widget colors, and embedded it. It's been running perfectly for 6 months with zero maintenance.",
+    name: "J. Torres",
+    role: "Founder",
+    company: "Slate Studio",
+    initials: "JT",
+    color: "#34d399",
+  },
+  {
+    quote:
+      "Davey handles multilingual support for us across 14 countries. The quality across languages is impressive — our CSAT actually increased after switching from human-only support.",
+    name: "Annika Lund",
+    role: "Director of Support",
+    company: "Vantage Global",
+    initials: "AL",
+    color: "#fb923c",
+  },
+  {
+    quote:
+      "I was worried customers would notice they were talking to a bot. Instead, we get feedback saying our support has 'really improved.' The handoff to humans is seamless when needed.",
+    name: "David Kim",
+    role: "Product Manager",
+    company: "Orbit SaaS",
+    initials: "DK",
+    color: "#f472b6",
+  },
+];
+
+const stats = [
+  { value: "Alive 24/7", label: "Delivers continuous customer engagement around the clock" },
+  { value: "Smarter Qualification", label: "Identifies higher-quality leads through guided questions" },
+  { value: "Adaptive Memory", label: "Builds context over time for more personalized responses" },
+  { value: "Rapid Response", label: "Provides near-instant answers to visitor questions" },
+];
+---
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">Loved by 100+ Innovative Brands</h2>
+      <p class="section-sub">
+        We’re already powering over 100 sites with smart AI. Join the growing list of companies using Zao Chat to automate their support and capture more leads.
+      </p>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      {stats.map((s) => (
+        <div class="stat">
+          <span class="stat-value">{s.value}</span>
+          <span class="stat-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Testimonials grid -->
+    <div class="testimonials-grid">
+      {testimonials.map((t) => (
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 stars">
+            {"★".repeat(5)}
+          </div>
+          <blockquote>"{t.quote}"</blockquote>
+          <div class="author">
+            <div class="author-avatar" style={`background: ${t.color}`}>
+              {t.initials}
+            </div>
+            <div>
+              <div class="author-name">{t.name}</div>
+              <div class="author-meta">{t.role} · {t.company}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #6366f1, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 29px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .testimonial-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .testimonial-card:hover {
+    border-color: var(--subtle);
+    transform: translateY(-2px);
+  }
+
+  .stars {
+    color: #facc15;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  blockquote {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .author-meta {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .stats-bar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-bar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

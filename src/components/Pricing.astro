@@ -1,0 +1,265 @@
+---
+const plans = [
+  {
+    name: "Pro Concierge",
+    price: "$199",
+    period: "per month",
+    description: "Intro rate for 3 months then $249/mo. Full setup included. Perfect for local businesses needing a smart assistant to capture leads 24/7.",
+    highlighted: false,
+    cta: "Subscribe Now",
+    link:" https://buy.stripe.com/eVq8wP6f1dfY5KPc8HcZa1l",
+    features: [
+      "Full White-Glove Setup",
+      "Unlimited Knowledge Updates",
+      "2,000 to 3,000 Conversations per month",
+      "Smart GPT-4o-mini Engine",
+      "Direct Email Leads",
+      "1:1 Human Support",
+    ],
+    missing: ["Custom branding", "Priority setup"],
+  },
+  {
+    name: "Performance Plus",
+    price: "$299",
+    period: "per month",
+    description: "Designed for high-traffic websites that need more conversational volume and deep knowledge integration.",
+    highlighted: true,
+    cta: "Subscribe Now",
+    link:"https://buy.stripe.com/6oUeVdavh6RA2yD4GfcZa1m",
+    features: [
+      "Everything in Pro, plus:",
+      "Roughly 10,000 Conversations",
+      "Priority Setup",
+      "Advanced Document Handling",
+      "Strategic 1:1 Consulting",
+      "No 'Zao' Branding",
+    ],
+    missing: ["Ultra-Logic Engine"],
+  },
+  {
+    name: "Enterprise Ultra",
+    price: "$599",
+    period: "per month",
+    description: "The ultimate AI experience. Powered by the world's most advanced reasoning engines.",
+    highlighted: false,
+    cta: "Subscribe Now",
+    link:"https://buy.stripe.com/dRm8wP32P7VEehlb4DcZa1o",
+    features: [
+      "Everything in Performance, plus:",
+      "Ultra-Logic Engine: Google Gemini Ultra",
+      "Infinite Complex Conversations",
+      "Complex Logic & Reasoning",
+      "Dedicated Account Manager",
+      "Custom Security Rules",
+    ],
+    missing: [],
+  },
+];
+---
+
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">Exclusive Launch Pricing</h2>
+      <p class="section-sub">
+        For just $199/mo for the first 3 months, our team personally builds and launches your custom chatbot. Professional service without the surprise charges.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      {plans.map((plan) => (
+        <div class={`plan-card ${plan.highlighted ? "plan-featured" : ""}`}>
+          {plan.highlighted && <div class="plan-badge">Most popular</div>}
+          <div class="plan-header">
+            <h3 class="plan-name">{plan.name}</h3>
+            <div class="plan-price">
+              <span class="price-amount">{plan.price}</span>
+              <span class="price-period">/{plan.period}</span>
+            </div>
+            <p class="plan-description">{plan.description}</p>
+          </div>
+
+          <a
+            href={plan.link} target="_blank"
+            class={`btn ${plan.highlighted ? "btn-primary" : "btn-outline"} plan-cta`}
+          >
+            {plan.cta}
+          </a>
+
+          <div class="plan-features">
+            {plan.features.map((f) => (
+              <div class="plan-feature">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8L6.5 11.5L13 4.5" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{f}</span>
+              </div>
+            ))}
+            {plan.missing.map((f) => (
+              <div class="plan-feature missing">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .section-sub {
+    max-width: 600px;
+    margin: 16px auto 0;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .plan-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .plan-card:hover {
+    border-color: var(--subtle);
+  }
+
+  .plan-featured {
+    background: var(--surface);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary), 0 24px 60px rgba(99, 102, 241, 0.15);
+  }
+
+  .plan-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .plan-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .plan-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .price-amount {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .price-period {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .plan-description {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .plan-cta {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--foreground);
+  }
+
+  .plan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .plan-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .plan-feature svg {
+    flex-shrink: 0;
+  }
+
+  .plan-feature.missing span {
+    color: var(--subtle);
+  }
+
+  .plan-feature.missing svg {
+    opacity: 0.3;
+  }
+
+  @media (max-width: 900px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      margin-inline: auto;
+    }
+  }
+</style>

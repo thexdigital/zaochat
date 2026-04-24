@@ -1,0 +1,142 @@
+---
+const sections = [
+  {
+    title: "Agreement to Terms",
+    content:
+      "By accessing or using Zao Chat, you agree to be bound by these Terms. If you do not agree, you must not use the Service.",
+  },
+  {
+    title: "Description of Service",
+    content:
+      "Zao Chat is an AI-powered chatbot platform that helps businesses capture and qualify leads, automate conversations, and receive visitor details instantly.",
+  },
+  {
+    title: "Accounts & Responsibilities",
+    content:
+      "You are responsible for maintaining your account credentials and all activity under your account. You must provide accurate information and use the service lawfully.",
+  },
+  {
+    title: "Subscription & Billing",
+    content:
+      "Zao Chat operates on a monthly subscription. Payments are billed in advance and are non-refundable unless stated otherwise. Failure to pay may result in suspension.",
+  },
+  {
+    title: "Data & Privacy",
+    content:
+      "You are responsible for any data collected through your chatbot. You must ensure compliance with applicable privacy laws and obtain user consent where required.",
+  },
+  {
+    title: "AI Limitations",
+    content:
+      "Our AI may provide inaccurate or incomplete responses. You are responsible for reviewing chatbot behavior and ensuring it aligns with your business needs.",
+  },
+  {
+    title: "Acceptable Use",
+    content:
+      "You may not use the service for illegal, harmful, or misleading purposes. Abuse, spam, or attempts to exploit the system are strictly prohibited.",
+  },
+  {
+    title: "Termination",
+    content:
+      "We may suspend or terminate your account if you violate these Terms or misuse the platform. You may cancel your subscription at any time.",
+  },
+  {
+    title: "Limitation of Liability",
+    content:
+      "We are not liable for any business losses, missed leads, or damages resulting from the use of the service.",
+  },
+  {
+    title: "Changes to Terms",
+    content:
+      "We may update these Terms at any time. Continued use of the Service means you accept the updated Terms.",
+  },
+];
+---
+
+<section class="terms" id="terms">
+  <div class="container">
+    <div class="terms-header">
+      <span class="section-label">Legal</span>
+      <h2 class="section-title">Terms of Use</h2>
+      <p class="section-sub">
+        Please read these terms carefully before using Zao Chat.
+      </p>
+    </div>
+
+    <div class="terms-list">
+      {sections.map((item, i) => (
+        <div class="term-item">
+          <div class="term-num">
+            {(i + 1).toString().padStart(2, "0")}
+          </div>
+          <div class="term-body">
+            <h3>{item.title}</h3>
+            <p>{item.content}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .terms {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .terms-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--primary);
+  }
+
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .section-sub {
+    color: var(--muted);
+  }
+
+  .terms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .term-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .term-num {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    min-width: 40px;
+  }
+
+  .term-body h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+
+  .term-body p {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+</style>

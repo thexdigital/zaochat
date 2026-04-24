@@ -1,0 +1,166 @@
+---
+import { Image } from 'astro:assets';
+import localBirdImage from '../images/logo.png';
+---
+
+
+<header class="nav-wrapper">
+  <nav class="container nav">
+    <a href="/" class="logo">
+      <Image src={localBirdImage} alt="Zao Chat Logo"  />
+      <span>Zao Chat</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#how-it-works">How it works</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/#testimonials">Testimonials</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="https://app.zaochat.com/login" target="_blank" class="btn btn-outline btn-sm">Log in</a>
+      <a href="https://buy.stripe.com/eVq8wP6f1dfY5KPc8HcZa1l" target="_blank" class="btn btn-primary btn-sm">Start Now $199/mo</a>
+    </div>
+  </nav>
+<script src="https://app.zaochat.com/widget/widget.js?v=1776333175" data-client-code="8882ce9d-3547-4a70-8efb-40737369b070" async></script>
+
+</header>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle?.addEventListener('click', () => {
+    links?.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+</script>
+
+<style>
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 7, 15, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 64px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+    background: var(--surface);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .btn-sm {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .logo img{
+      width:30px;
+      height:30px;
+  }
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      gap: 4px;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-actions {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,156 @@
+---
+const steps = [
+  {
+    num: "01",
+    title: "Connect your data",
+    description:
+      "Just drop in your URL, and we’ll handle the rest. Whether it’s your website, product pages, or FAQs, Zao Chat personally indexes your data in minutes to give your customers instant, accurate answers.",
+    tag: "Same-Day Setup",
+  },
+  {
+    num: "02",
+    title: "Customize conversations",
+    description:
+      "Set your brand colors and style, then let us handle the logic. Zao Chat qualifies your visitors and instantly emails you their contact details and conversation history, so you never miss a beat.",
+    tag: "Configure",
+  },
+  {
+    num: "03",
+    title: "Let's Freakin' Go!",
+    description:
+      "Don’t worry about code or complex plugins. Whether you’re on Shopify, WordPress, or Webflow, our team personally handles the installation for you. Just sit back and watch your chatbot go live in minutes.",
+    tag: "Instant Launch",
+  },
+];
+---
+
+<section class="hiw" id="how-it-works">
+  <div class="container">
+    <div class="hiw-header">
+      <span class="section-label">How it works</span>
+      <h2 class="section-title">Expert Setup Included</h2>
+      <p class="section-sub">
+        Forget the technical headache. Our team handles the entire build for you, so you can launch a premium chat experience without lifting a finger.
+      </p>
+    </div>
+
+    <div class="steps">
+      {steps.map((step, i) => (
+        <div class="step">
+          <div class="step-connector" aria-hidden="true">
+            {i < steps.length - 1 && <div class="connector-line" />}
+          </div>
+          <div class="step-num">{step.num}</div>
+          <div class="step-body">
+            <span class="step-tag">{step.tag}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hiw {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .hiw-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(33.33% - 1px);
+    right: calc(33.33% - 1px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0.4;
+  }
+
+  .step {
+    padding: 0 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .step-connector {
+    position: relative;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--accent);
+    box-shadow: 0 0 0 6px var(--primary-glow);
+    flex-shrink: 0;
+    z-index: 1;
+    position: relative;
+  }
+
+  .step-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .step-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    background: var(--primary-glow);
+    border: 1px solid var(--primary);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .step-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .step-body p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .steps::before {
+      display: none;
+    }
+  }
+</style>

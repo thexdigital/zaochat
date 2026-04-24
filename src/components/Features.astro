@@ -1,0 +1,134 @@
+---
+const features = [
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2Z" stroke="currentColor" stroke-width="1.5"/><path d="M11 7V11L14 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    title: "Instant 24/7 responses",
+    description:
+      "Zao Chat never sleeps. It handles customer queries at 3am on a Sunday with the same speed and accuracy as peak hours.",
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5H19M3 11H13M3 17H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    title: "Trained on your docs",
+    description:
+      "Upload your knowledge base, FAQs, or product docs. Zao Chat learns your brand voice and answers with precision.",
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 12L10.5 14.5L14 9M3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: "Smart lead qualification",
+    description:
+      "Automatically capture visitor info and qualify leads with intelligent follow-up questions, sent straight to your email.",
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6C4 4.89543 4.89543 4 6 4H10L12 6H18C19.1046 6 20 6.89543 20 8V16C20 17.1046 19.1046 18 18 18H6C4.89543 18 4 17.1046 4 16V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`,
+    title: "Edit anytime",
+    description:
+      "Edit your information, save it, and your chatbot is ready to answer with updated knowledge in just seconds.",
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M5 18C5 15.2386 7.23858 13 10 13H12C14.7614 13 17 15.2386 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    title: "Direct Support",
+    description:
+      "We don't just provide a tool; we work one-on-one with you to build a custom chatbot that delivers actual results.",
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3H19V13H3V3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 13V17M11 13V19M15 13V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    title: "Live Monitoring",
+    description:
+      "Track every chat in your dashboard and receive instant email alerts the moment a qualified lead submits their info.",
+  },
+];
+---
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header">
+      <span class="section-label">Features</span>
+      <h2 class="section-title">Your Personal Team<br />Every Step of the Way</h2>
+      <p class="section-sub">
+        We work one-on-one with you to build and refine your chatbot. With unlimited knowledge base updates and direct access to our team, you’re never doing it alone.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      {features.map((f) => (
+        <div class="feature-card">
+          <div class="feature-icon" set:html={f.icon} />
+          <h3>{f.title}</h3>
+          <p>{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .feature-card {
+    background: var(--bg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: background 0.2s;
+  }
+
+  .feature-card:hover {
+    background: var(--surface);
+  }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
